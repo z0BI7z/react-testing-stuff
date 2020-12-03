@@ -30,7 +30,7 @@ const TimedCounter = () => {
     setCount((count) => count + 1);
   }, []);
 
-  const { start, stop, isRunning } = useInterval(inc, 500);
+  const [isRunning, start, stop] = useInterval(inc, 500);
 
   useEffect(() => {
     if (count === 10) {
