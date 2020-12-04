@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ToggleModal from './components/ToggleModal';
 import TimedCounter from './components/TimedCounter';
 import Rerender from './components/Rerender';
+import Importer from './components/Importer';
 
 const AppContainer = styled.div`
   max-width: 36rem;
@@ -16,6 +17,7 @@ function App() {
       <ToggleModal />
       <TimedCounter />
       <Rerender />
+      <Importer />
     </AppContainer>
   );
 }
