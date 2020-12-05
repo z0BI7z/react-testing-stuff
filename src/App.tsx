@@ -11,7 +11,7 @@ const AppContainer = styled.div`
   padding: 1rem;
 `;
 
-function App() {
+const App: React.FC = () => {
   return (
     <AppContainer>
       <ToggleModal />
@@ -20,6 +20,6 @@ function App() {
       <Importer />
     </AppContainer>
   );
-}
+};
 
 export default App;
