@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from './Modal';
 import Rerender from 'components/Rerender';
 
-const Importer = () => {
+const Importer: React.FC = () => {
   const handleClick = () => {
     console.log(
       `imported ${Modal} using a relative import 

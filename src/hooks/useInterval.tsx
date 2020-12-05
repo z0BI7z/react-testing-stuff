@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
 
 const useInterval = (
+  // eslint-disable-next-line @typescript-eslint/ban-types
   func: Function,
   duration: number
 ): [boolean, () => void, () => void] => {

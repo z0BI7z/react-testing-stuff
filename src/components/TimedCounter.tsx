@@ -1,10 +1,6 @@
-import React, {
-  useEffect,
-  useState,
-  useCallback,
-  FunctionComponent,
-} from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import useInterval from '../hooks/useInterval';
+import emptyFunc from 'utils/empty-func';
 
 interface ActionsProps {
   start: () => void;
@@ -12,7 +8,11 @@ interface ActionsProps {
   reset: () => void;
 }
 
-const Actions: FunctionComponent<ActionsProps> = ({ start, stop, reset }) => {
+const Actions: React.FC<ActionsProps> = ({
+  start = emptyFunc,
+  stop = emptyFunc,
+  reset = emptyFunc,
+}) => {
   console.log('actions rerender');
   return (
     <React.Fragment>
@@ -23,7 +23,7 @@ const Actions: FunctionComponent<ActionsProps> = ({ start, stop, reset }) => {
   );
 };
 
-const TimedCounter = () => {
+const TimedCounter: React.FC = () => {
   const [count, setCount] = useState(0);
 
   const inc = useCallback(() => {
@@ -33,17 +33,17 @@ const TimedCounter = () => {
   const [isRunning, start, stop] = useInterval(inc, 500);
 
   useEffect(() => {
-    if (count === 10) {
+    if (count >= 10) {
       stop();
     }
-  }, [count, stop]);
+  }, [count, stop, isRunning]);
 
   const reset = useCallback(() => {
     setCount(0);
   }, []);
 
   useEffect(() => {
-    console.log('start updated');
+    console.log('start, stop, or reset updated');
   }, [start, stop, reset]);
 
   return (

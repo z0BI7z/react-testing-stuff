@@ -1,4 +1,4 @@
-import React, { useState, useEffect, FunctionComponent } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 
@@ -28,7 +28,7 @@ interface ModalProps {
   onCancel?: () => void;
 }
 
-const Modal: FunctionComponent<ModalProps> = ({ open, onCancel, children }) => {
+const Modal: React.FC<ModalProps> = ({ open, onCancel, children }) => {
   const [el] = useState(document.createElement('div'));
 
   useEffect(() => {
