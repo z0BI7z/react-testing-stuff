@@ -1,8 +1,8 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const useInterval = (
   // eslint-disable-next-line @typescript-eslint/ban-types
-  func: Function,
+  func: () => void,
   duration: number
 ): [boolean, () => void, () => void] => {
   const ref = useRef<number>();

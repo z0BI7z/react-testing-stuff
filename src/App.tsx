@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import ToggleModal from './components/ToggleModal';
-import TimedCounter from './components/TimedCounter';
-import Rerender from './components/Rerender';
 import Importer from './components/Importer';
+import LastAction from './components/last-action';
+import Rerender from './components/Rerender';
+import TimedCounter from './components/TimedCounter';
+import ToggleModal from './components/ToggleModal';
+import ReduxProvider from './redux/provider';
 
 const AppContainer = styled.div`
   max-width: 36rem;
@@ -13,12 +15,15 @@ const AppContainer = styled.div`
 
 const App: React.FC = () => {
   return (
-    <AppContainer>
-      <ToggleModal />
-      <TimedCounter />
-      <Rerender />
-      <Importer />
-    </AppContainer>
+    <ReduxProvider>
+      <AppContainer>
+        <ToggleModal />
+        <TimedCounter />
+        <Rerender />
+        <Importer />
+        <LastAction />
+      </AppContainer>
+    </ReduxProvider>
   );
 };
 
