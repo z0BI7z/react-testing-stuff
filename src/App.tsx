@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ActionObserver from './components/action-observer';
 import Importer from './components/importer';
 import LastAction from './components/last-action';
 import Rerender from './components/rerender';
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Rerender />
         <Importer />
         <LastAction />
+        <ActionObserver />
       </AppContainer>
     </ReduxProvider>
   );
