@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import Modal from './modal';
 
 const ToggleModal: React.FC = () => {
   const [open, setOpen] = useState(false);

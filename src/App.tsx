@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Importer from './components/Importer';
+import Importer from './components/importer';
 import LastAction from './components/last-action';
-import Rerender from './components/Rerender';
-import TimedCounter from './components/TimedCounter';
-import ToggleModal from './components/ToggleModal';
+import Rerender from './components/rerender';
+import TimedCounter from './components/timed-counter';
+import ToggleModal from './components/toggle-modal';
 import ReduxProvider from './redux/provider';
 
 const AppContainer = styled.div`

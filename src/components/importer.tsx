@@ -1,6 +1,6 @@
+import Rerender from 'components/rerender';
 import React from 'react';
-import Modal from './Modal';
-import Rerender from 'components/Rerender';
+import Modal from './modal';
 
 const Importer: React.FC = () => {
   const handleClick = () => {
