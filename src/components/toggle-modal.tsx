@@ -3,6 +3,7 @@ import Modal from './modal';
 
 const ToggleModal: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [full, setFull] = useState(false);
 
   return (
     <React.Fragment>
@@ -11,10 +12,15 @@ const ToggleModal: React.FC = () => {
         <button onClick={() => setOpen(!open)}>
           {open ? 'close' : 'open'}
         </button>
+        <button onClick={() => setFull(!full)}>
+          {full ? 'set min' : 'set full'}
+        </button>
       </div>
-      <Modal open={open} onCancel={() => setOpen(false)}>
-        <div>hello</div>
-        <button onClick={() => setOpen(false)}>close</button>
+      <Modal open={open} onCancel={() => setOpen(false)} fullscreen={full}>
+        <div style={{ padding: '.5rem 1rem' }}>
+          <p>hello</p>
+          <button onClick={() => setOpen(false)}>close</button>
+        </div>
       </Modal>
     </React.Fragment>
   );
